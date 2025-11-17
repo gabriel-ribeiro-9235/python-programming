@@ -1,0 +1,6 @@
+print('{:=^26}'.format('DESAFIO 24'))
+nome = str(input('Nome da cidade: ')).strip()
+print('"\033[35mTrue\033[m" para sim e "\033[35mFalse\033[m" para não')
+print()
+print('\033[32m{}\033[m começa com "Santo"?'.format(nome.title()))
+print('\033[35m', 'SANTO' in nome[:nome.find(' ')].upper(), '\033[m')

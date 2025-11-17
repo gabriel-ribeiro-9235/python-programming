@@ -1,0 +1,6 @@
+print('{:=^26}'.format('DESAFIO 25'))
+nome = str(input('Nome completo: ')).strip()
+print('"\033[97mTrue\033[m" para sim e "\033[97mFalse\033[m" para não')
+print()
+print('\033[32m{}\033[m tem "Silva" no nome?'.format(nome.title()))
+print('\033[97m', 'SILVA' in nome.upper(), '\033[m')

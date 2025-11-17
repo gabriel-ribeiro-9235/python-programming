@@ -1,0 +1,5 @@
+print('========DESAFIO 02========')
+dia=input('\033[34mDia: ')
+mes=input('Mês: ')
+ano=input('Ano:\033[m ')
+print('Você nasceu em \033[34m', dia, ' de ', mes, ' de ', ano, '\033[m. Correto?')

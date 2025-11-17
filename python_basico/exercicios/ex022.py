@@ -1,0 +1,6 @@
+print('{:=^26}'.format('DESAFIO 22'))
+nome = str(input('Nome completo: ')).strip()
+print('Nome em maiúsculo: {}'.format(nome.upper()))
+print('Nome em minúsculo: {}'.format(nome.lower()))
+print('Quantidade de letras: {}'.format((len(nome)-nome.count(' '))))
+print('Quantidade de letras do primeiro nome: {}'.format(nome.find(' ')))

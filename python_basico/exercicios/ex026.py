@@ -1,0 +1,5 @@
+print('{:=^26}'.format('DESAFIO 26'))
+frase = str(input('Digite uma frase: ')).strip()
+print('Quantidade de letras "a": \033[31m{}\033[m'.format(frase.lower().count('a')))
+print('A primeira letra "a" está na \033[33m{}ª posição\033[m'.format(frase.lower().find('a') + 1))
+print('A última letra "a" está na \033[34m{}ª posição\033[m'.format(frase.lower().rfind('a') + 1))

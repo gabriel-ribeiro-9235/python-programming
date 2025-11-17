@@ -1,0 +1,8 @@
+print('{:=^26}'.format('DESAFIO 23'))
+n= int(input('\033[32mDigite um número de 0 a 9999: '))
+print('\033[35m_' * 11)
+print('Unidade: {}'.format(n % 10))
+print('Dezena:  {}'.format(n % 100 // 10))
+print('Centena: {}'.format(n % 1000 // 100))
+print('Milhar:  {}'.format(n % 10000 // 1000))
+print('_' * 11, '\033[m')
