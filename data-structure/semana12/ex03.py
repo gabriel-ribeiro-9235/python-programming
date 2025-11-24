@@ -10,7 +10,7 @@ def menu():
 4- Alterar preço de produto
 5- Sair''')
     k = int(input("Sua opção: "))
-    while k not in [1, 2, 3, 4, 5arq.write(key + "\t" + dic[key][0] + "\t" dic[key][1] + "\n")]:
+    while k not in [1, 2, 3, 4, 5]:
         k = int(input("Escolha inválida! Tente novamente"))
     linha()
     return k
@@ -118,4 +118,3 @@ while n != 5:
 gravaArq(produtos)
 
 print(produtos)
-elif n == 5:
