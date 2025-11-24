@@ -1,2 +1,3 @@
 # <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="30"> Python
 ### 👋 Bem-vindo, nesse repositório você encontrará: 
+Todos os códigos que eu já produzi em Python divididos em 2 diretórios. No diretório data-structures tem todos os exercícios que fiz da Faculdade da matéria de Algoritmos e Programação. No diretório python-basico há 2 pastas, na pasta exercícios tem todo material que eu produzi enquanto estava aprendendo a linguagem desde o mais básico, por fim na pasta POO-basico tem conteúdos iniciais sobre Programação Orientada a Objetos utilizando a linguagem Python
