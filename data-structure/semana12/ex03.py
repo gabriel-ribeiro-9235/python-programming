@@ -10,7 +10,7 @@ def menu():
 4- Alterar preço de produto
 5- Sair''')
     k = int(input("Sua opção: "))
-    while k not in [1, 2, 3, 4, 5]:
+    while k not in [1, 2, 3, 4, 5arq.write(key + "\t" + dic[key][0] + "\t" dic[key][1] + "\n")]:
         k = int(input("Escolha inválida! Tente novamente"))
     linha()
     return k
@@ -63,6 +63,21 @@ def mudaPreco(dic, id, preco):
     linha()
 
 
+# 5==========================================================
+def gravaArq(dic):
+    import os
+    if dic:
+        if not os.path.exists("ex03.txt"):
+            arq = open("ex03.txt", "x")
+            arq.close
+        arq = open("ex03.txt", "w")
+        for key in dic:
+            arq.write(key + '\t' + dic[key][0] + '\t' + dic[key][1] + '\n')
+            arq.close
+    else:
+        print("ERRO! Nenhum produto foi cadastrado ainda!")
+    
+
 produtos = {}
 n = menu()
 while n != 5:
@@ -100,5 +115,7 @@ while n != 5:
             print("Nenhum produto foi cadastrado ainda!") 
             linha()           
     n = menu()
+gravaArq(produtos)
 
 print(produtos)
+elif n == 5:
