@@ -72,7 +72,7 @@ def gravaArq(dic):
             arq.close
         arq = open("ex03.txt", "w")
         for key in dic:
-            arq.write(key + '\t' + dic[key][0] + '\t' + dic[key][1] + '\n')
+            arq.write(f"{key} \t {dic[key][0]} \t {dic[key][1]} \n")
             arq.close
     else:
         print("ERRO! Nenhum produto foi cadastrado ainda!")
