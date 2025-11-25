@@ -68,10 +68,10 @@ def mudaPreco(dic, id, preco):
 def gravaArq(dic):
     import os
     if dic:
-        if not os.path.exists("data-structure/semana12/produtos.txt"):
-            arq = open("data-structure/semana12/produtos.txt", "x")
+        if not os.path.exists("data-structure/semana12/ex03/produtos.txt"):
+            arq = open("data-structure/semana12/ex03/produtos.txt", "x")
             arq.close
-        arq = open("data-structure/semana12/produtos.txt", "w")
+        arq = open("data-structure/semana12/ex03/produtos.txt", "w")
         for key in dic:
             arq.write(f"{key}\t{dic[key][0]}\t{dic[key][1][0]};{dic[key][1][1]}\n")
             arq.close
@@ -111,7 +111,7 @@ Quantidade: {valores[1][1]}""")
         linha()
 
 
-produtos = leArq("data-structure/semana12/produtos.txt")
+produtos = leArq("data-structure/semana12/ex03/produtos.txt")
 if produtos != "nada":
     n = menu()
 else:
