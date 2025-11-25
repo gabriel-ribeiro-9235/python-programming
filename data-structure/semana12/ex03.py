@@ -76,9 +76,26 @@ def gravaArq(dic):
             arq.close
     else:
         print("ERRO! Nenhum produto foi cadastrado ainda!")
-    
 
-produtos = {}
+
+# 6==========================================================
+def leArq(arq):
+    dic = {}
+    arquivo = open(arq, "r")
+    for linha in arquivo:
+        linha = linha[:-1]
+        items = linha.split("\t")
+        ID = int(items[0])
+        nome = items[1]
+        tupla = items[2].split(";")
+        preco = float(tupla[0])
+        qnt = int(tupla[1])
+        dic[ID] = [nome, (preco, qnt)]
+    arquivo.close()
+    return dic
+
+
+produtos = leArq("data-structure/semana12/produtos.txt")
 n = menu()
 while n != 5:
     if n == 1:
