@@ -80,23 +80,32 @@ def gravaArq(dic):
 
 # 6==========================================================
 def leArq(arq):
-    dic = {}
-    arquivo = open(arq, "r")
-    for linha in arquivo:
-        linha = linha[:-1]
-        items = linha.split("\t")
-        ID = int(items[0])
-        nome = items[1]
-        tupla = items[2].split(";")
-        preco = float(tupla[0])
-        qnt = int(tupla[1])
-        dic[ID] = [nome, (preco, qnt)]
-    arquivo.close()
-    return dic
+    import os
+    if os.path.exists(arq):
+        dic = {}
+        arquivo = open(arq, "r")
+        for linha in arquivo:
+            linha = linha[:-1]
+            items = linha.split("\t")
+            ID = int(items[0])
+            nome = items[1]
+            tupla = items[2].split(";")
+            preco = float(tupla[0])
+            qnt = int(tupla[1])
+            dic[ID] = [nome, (preco, qnt)]
+        arquivo.close()
+        return dic
+    else:
+        print("ERRO! O arquivo produtos.txt não existe.")
+        return "nada"
 
 
 produtos = leArq("data-structure/semana12/produtos.txt")
-n = menu()
+if produtos != "nada":
+    n = menu()
+else:
+    n = 5
+
 while n != 5:
     if n == 1:
         insereProduto(produtos)
@@ -132,6 +141,7 @@ while n != 5:
             print("Nenhum produto foi cadastrado ainda!") 
             linha()           
     n = menu()
-gravaArq(produtos)
+if produtos != "nada":
+    gravaArq(produtos)
 
 print(produtos)
