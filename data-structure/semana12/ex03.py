@@ -98,6 +98,16 @@ def leArq(arq):
     else:
         print("ERRO! O arquivo produtos.txt não existe.")
         return "nada"
+    
+
+# 7==========================================================
+def mostraFormatado(dic):
+    for chave, valores in dic.items():
+        print(f"""Código do produto: {chave}
+Nome: {valores[0]}
+Preço: R${valores[1][0]:.2f}
+Quantidade: {valores[1][1]}""")
+        linha()
 
 
 produtos = leArq("data-structure/semana12/produtos.txt")
