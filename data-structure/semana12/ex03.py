@@ -73,7 +73,7 @@ def gravaArq(dic):
             arq.close
         arq = open("data-structure/semana12/produtos.txt", "w")
         for key in dic:
-            arq.write(f"{key} \t {dic[key][0]} \t {dic[key][1]} \n")
+            arq.write(f"{key}\t{dic[key][0]}\t{dic[key][1][0]};{dic[key][1][1]}\n")
             arq.close
     else:
         print("ERRO! Nenhum produto foi cadastrado ainda!")
