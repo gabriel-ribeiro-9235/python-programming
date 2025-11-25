@@ -8,9 +8,10 @@ def menu():
 2- Efetuar venda
 3- Exibir produtos abaixo do estoque mínimo
 4- Alterar preço de produto
-5- Sair''')
+5- Mostrar todos os produtos (formatado)         
+6- Sair''')
     k = int(input("Sua opção: "))
-    while k not in [1, 2, 3, 4, 5]:
+    while k not in [1, 2, 3, 4, 5, 6]:
         k = int(input("Escolha inválida! Tente novamente"))
     linha()
     return k
@@ -114,9 +115,9 @@ produtos = leArq("data-structure/semana12/produtos.txt")
 if produtos != "nada":
     n = menu()
 else:
-    n = 5
+    n = 6
 
-while n != 5:
+while n != 6:
     if n == 1:
         insereProduto(produtos)
     elif n == 2:
@@ -149,9 +150,9 @@ while n != 5:
             mudaPreco(produtos, reg, novo)
         else:
             print("Nenhum produto foi cadastrado ainda!") 
-            linha()           
+            linha()  
+    elif n == 5:
+        mostraFormatado(produtos)         
     n = menu()
 if produtos != "nada":
     gravaArq(produtos)
-
-print(produtos)
