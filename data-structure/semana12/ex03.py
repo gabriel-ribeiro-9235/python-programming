@@ -67,10 +67,10 @@ def mudaPreco(dic, id, preco):
 def gravaArq(dic):
     import os
     if dic:
-        if not os.path.exists("ex03.txt"):
-            arq = open("ex03.txt", "x")
+        if not os.path.exists("data-structure/semana12/produtos.txt"):
+            arq = open("data-structure/semana12/produtos.txt", "x")
             arq.close
-        arq = open("ex03.txt", "w")
+        arq = open("data-structure/semana12/produtos.txt", "w")
         for key in dic:
             arq.write(f"{key} \t {dic[key][0]} \t {dic[key][1]} \n")
             arq.close
