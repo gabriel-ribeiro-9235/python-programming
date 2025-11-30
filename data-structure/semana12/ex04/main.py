@@ -209,6 +209,29 @@ def leArq(caminho, tipo):
         return {}
 
 
+def gravaArq(dic, caminho, tipo):
+    import os
+    if not os.path.exists(caminho):
+        arq = open(caminho, "x")
+        arq.close()
+    arq = open(caminho, "w")
+    if tipo == "alunos":
+        for key in dic:
+            emails = ""
+            for email in dic[key][1]:
+                emails += f"{email}~"
+            emails = emails[:-1]
+            notas = ""
+            for lista in dic[key][2]:
+                notas += f"{lista[0]}^{lista[1]}~"
+            notas = notas[:-1]
+            arq.write(f"{key[0]}\t{key[1]}\t{dic[key][0]}\t{emails}\t{notas}\n")
+    else:
+        for key in dic:
+            arq.write(f"{key}\t{dic[key][0]}~{dic[key][1]}\n")
+    arq.close()
+
+
 dic_alunos = leArq("data-structure/semana12/ex04/alunos.txt", "alunos")
 disciplinas = leArq("data-structure/semana12/ex04/disciplinas.txt", "disciplinas")
 k = menu()
@@ -232,3 +255,5 @@ while k != 7:
     else:
         adicionarDiseNota(dic_alunos, disciplinas)
     k = menu()
+gravaArq(dic_alunos, "data-structure/semana12/ex04/alunos.txt", "alunos")
+gravaArq(disciplinas, "data-structure/semana12/ex04/disciplinas.txt", "disciplinas")

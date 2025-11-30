@@ -1,1 +1,1 @@
-1	Gabriel	24/10/2006	melo@gmail.com~gabriel@gmail.com	Algoritmos^10~Matemática^9~Inglês^9.5
+1	Gabriel	24/10/2006	melo@gmail.com~gabriel@gmail.com	Algoritmos^10.0~Matemática^9.0~Inglês^9.5
