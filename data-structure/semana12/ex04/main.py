@@ -203,9 +203,11 @@ def leArq(caminho, tipo):
                 nome = lista[1].split("~")[0]
                 carga = int(lista[1].split("~")[1])
                 dic[sigla] = [nome, carga]
+        arq.close()
         return dic
     else:
         return {}
+
 
 dic_alunos = leArq("data-structure/semana12/ex04/alunos.txt", "alunos")
 disciplinas = leArq("data-structure/semana12/ex04/disciplinas.txt", "disciplinas")
