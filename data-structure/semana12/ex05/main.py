@@ -17,5 +17,20 @@ def mais6notas(caminho):
     return lista
 
 
+def calculaMedia(caminho):
+    alunos = abasteceDic(caminho)
+    medias = {}
+    for aluno in alunos:
+        qnt = len(alunos[aluno])
+        soma_notas = 0
+        for nota in alunos[aluno]:
+            soma_notas += float(nota)
+        media = round((soma_notas / qnt), 2)
+        medias[aluno] = media
+    return medias
+    
+
+
 path = "data-structure/semana12/ex05/estudantes.dat"
 mais6 = mais6notas(path)
+med = calculaMedia(path)
