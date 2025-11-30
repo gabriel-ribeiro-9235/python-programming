@@ -1,0 +1,3 @@
+APR	Algoritmos~1000
+MAT	Matemática~2000
+ING	Inglês~1500
