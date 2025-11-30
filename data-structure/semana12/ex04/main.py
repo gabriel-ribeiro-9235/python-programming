@@ -179,8 +179,30 @@ def adicionarDiseNota(dic, dis):
         linha()
 
 
-dic_alunos = {}
-disciplinas = {}
+def leArq(caminho):
+    import os
+    if os.path.exists(caminho):
+        dic = {}
+        arq = open(caminho, "r")
+        for linha in arq:
+            linha = linha[:-1]
+            lista = linha.split("\t")
+            RA = int(lista[0])
+            nome = lista[1]
+            data = lista[2]
+            emails = lista[3].split("~")
+            notas = []
+            for elemento in lista[4].split("~"):
+                mat = elemento.split("^")[0]
+                nota = float(elemento.split("^")[1])
+                notas.append([mat, nota])
+            dic[(RA, nome)] = (data, emails, notas)
+        return dic
+    else:
+        return {}
+
+dic_alunos = leArq("data-structure/semana12/ex04/alunos.txt")
+disciplinas = {"a": ["APR1", 10], "m": ["MAT", 9], "i": ["ING", 9.5]}
 k = menu()
 while k != 7:
     if k == 1:
